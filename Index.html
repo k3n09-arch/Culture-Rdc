@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congo Culture - Patrimoine de la RDC</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rdcBlue: '#0077c8',
+                        rdcGold: '#ffce00',
+                        rdcRed: '#ce1126',
+                        rdcDark: '#0f172a',
+                        rdcCard: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-rdcDark text-slate-100 font-sans leading-relaxed selection:bg-rdcGold selection:text-rdcDark">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header border-b border-rdcGold/30 px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-extrabold tracking-wider text-rdcGold uppercase flex items-center gap-2">
+            <span class="text-3xl">🇨🇩</span> Culture<span class="text-rdcRed">RDC</span>
+        </a>
+        <nav class="hidden md:flex gap-6 font-semibold text-sm">
+            <a href="#hymne" class="hover:text-rdcGold transition">Hymne National</a>
+            <a href="#pionniers" class="hover:text-rdcGold transition">Pionniers & Rumba</a>
+            <a href="#sape" class="hover:text-rdcGold transition">La Sapologie</a>
+            <a href="#gastronomie" class="hover:text-rdcGold transition">Gastronomie</a>
+            <a href="#quiz" class="hover:text-rdcGold transition">Quiz Langues</a>
+        </nav>
+        <a href="#quiz" class="bg-rdcRed hover:bg-red-700 text-white text-sm font-bold px-4 py-2 rounded-full transition shadow-lg">
+            Jouer au Quiz
+        </a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1600&q=80');">
+        <div class="max-w-4xl text-center space-y-6">
+            <span class="inline-block bg-rdcGold/20 text-rdcGold border border-rdcGold/40 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                Patrimoine Immatériel UNESCO & Culture Vivante
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rdcGold via-white to-rdcBlue leading-tight">
+                L'Ame et la Grandeur de la Culture Congolaise
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+                Explorez l'histoire des grands royaumes, les virtuoses de la Rumba, l'art mythique de la Sapologie, et apprenez nos langues nationales.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="#hymne" class="bg-rdcGold hover:bg-yellow-400 text-rdcDark font-extrabold px-8 py-3.5 rounded-full transition shadow-xl transform hover:-translate-y-1">
+                    Écouter l'Hymne National 🎵
+                </a>
+                <a href="#pionniers" class="border-2 border-slate-400 hover:border-rdcGold px-8 py-3.5 rounded-full font-bold transition">
+                    Découvrir la Rumba & le Sébéne
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HYMNE NATIONAL -->
+    <section id="hymne" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="bg-rdcCard border-l-8 border-rdcBlue rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-8 border-b border-slate-700 pb-6">
+                <div>
+                    <span class="text-xs font-bold text-rdcBlue uppercase tracking-widest">Symbole de Souveraineté</span>
+                    <h2 class="text-3xl font-bold text-rdcGold mt-1">Debout Congolais !</h2>
+                    <p class="text-sm text-slate-400">Écrit en 1960 par Joseph Lutumba et composé par le Père Simon-Pierre Boka</p>
+                </div>
+                <!-- LECTEUR AUDIO POUR L'HYMNE -->
+                <div class="bg-slate-900 p-4 rounded-xl border border-rdcGold/40 w-full md:w-80 text-center shadow-inner">
+                    <p class="text-xs text-rdcGold font-bold mb-2 uppercase tracking-wide">
+                        <i class="fas fa-compact-disc fa-spin mr-2"></i>Instrumentale Officielle
+                    </p>
+                    <audio controls class="w-full">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/2/22/Debout_Congolais_instrumental.ogg" type="audio/ogg">
+                        Votre navigateur ne supporte pas le lecteur audio.
+                    </audio>
+                </div>
+            </div>
+
+            <!-- PAROLES DE L'HYMNE -->
+            <div class="space-y-6 text-slate-200 text-center md:text-left text-lg leading-relaxed">
+                <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
+                    <h3 class="text-rdcRed font-bold text-sm uppercase mb-2">Refrain</h3>
+                    <p class="italic font-semibold">
+                        Debout Congolais,<br>
+                        Unis par le sort, Unis dans l'effort pour le salut !<br>
+                        Aujourd'hui dressons nos fronts longtemps courbés<br>
+                        Et prenons plus bel élan, dans la paix,<br>
+                        Ô peuple ardent, par le travail, nous bâtirons un pays plus beau qu'avant, dans la paix !
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 text-base">
+                    <div class="bg-slate-900/30 p-5 rounded-xl">
+                        <h4 class="text-rdcGold font-bold text-sm mb-2">1er Couplet</h4>
+                        <p>
+                            Citoyens, entonnez l'hymne sacré de votre fierté,<br>
+                            Acrochez à jamais le drapeau de votre liberté.<br>
+                            Quarante ans d'indépendance, ô fleur de mémoire !<br>
+                            Béni soit le sol de nos aïeux,<br>
+                            Béni soit le ciel de nos destinées !
+                        </p>
+                    </div>
+                    <div class="bg-slate-900/30 p-5 rounded-xl">
+                        <h4 class="text-rdcGold font-bold text-sm mb-2">2ème Couplet</h4>
+                        <p>
+                            Bâtissons un pays plus beau qu'avant,<br>
+                            Dans la paix, la justice et le travail.<br>
+                            Peuple congolais, garde ta foi,<br>
+                            Que la justice et la paix régnent à jamais !
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION MUSIQUE, PIONNIERS ET SÉBÈNE -->
+    <section id="pionniers" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-rdcGold">La Rumba Congolaise & Ses Légendes</h2>
+            <p class="text-slate-400 mt-2">Cliquez sur une carte pour ouvrir la semi-page d'explications détaillées</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Carte Rumba -->
+            <div onclick="openModal('modal-rumba')" class="bg-rdcCard rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transform hover:-translate-y-2 transition duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Rumba" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-rdcBlue text-white text-xs font-bold px-3 py-1 rounded-full">UNESCO</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-rdcGold group-hover:text-white transition">L'Histoire de la Rumba</h3>
+                    <p class="text-slate-300 text-sm mt-2 line-clamp-3">De l'African Jazz de Kallé Jeef jusqu'à l'inauguration du style moderne kinois...</p>
+                    <span class="inline-block text-xs font-bold text-rdcGold mt-4">En savoir plus →</span>
+                </div>
+            </div>
+
+            <!-- Carte Le Sébéne -->
+            <div onclick="openModal('modal-sebene')" class="bg-rdcCard rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transform hover:-translate-y-2 transition duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Guitare Sebene" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-rdcRed text-white text-xs font-bold px-3 py-1 rounded-full">Rythme</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-rdcGold group-hover:text-white transition">Le Sébéne & La Guitare solo</h3>
+                    <p class="text-slate-300 text-sm mt-2 line-clamp-3">Découvrez la partie dansante, l'extase instrumentale et les solistes de légende comme Franco et Dr Nico...</p>
+                    <span class="inline-block text-xs font-bold text-rdcGold mt-4">En savoir plus →</span>
+                </div>
+            </div>
+
+            <!-- Carte Les Pionniers -->
+            <div onclick="openModal('modal-pionniers')" class="bg-rdcCard rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transform hover:-translate-y-2 transition duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80" alt="Pionniers" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-rdcGold text-rdcDark text-xs font-bold px-3 py-1 rounded-full">Icones</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-rdcGold group-hover:text-white transition">Les Pères Fondateurs</h3>
+                    <p class="text-slate-300 text-sm mt-2 line-clamp-3">Grand Kallé, Franco Luambo, Tabu Ley Rochereau, Papa Wemba, Madilu System...</p>
+                    <span class="inline-block text-xs font-bold text-rdcGold mt-4">En savoir plus →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION LA SAPE (SAPOLOGIE) -->
+    <section id="sape" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="bg-gradient-to-r from-rdcCard via-slate-800 to-rdcCard rounded-3xl p-8 md:p-12 border border-rdcGold/30 shadow-2xl grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <span class="text-xs font-extrabold text-rdcGold uppercase tracking-widest">Élégance & Philosophie</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">La Sapologie Kinoise</h2>
+                <p class="text-slate-300 text-base leading-relaxed">
+                    La <strong>SAPE</strong> (Société des Ambianceurs et des Personnes Élégantes) dépasse la simple mode. C'est un mouvement sous-culturel pacifique, une véritable thérapie sociale par le style raffiné et le respect d'autrui.
+                </p>
+                <div class="pt-2">
+                    <button onclick="openModal('modal-sape')" class="bg-rdcGold text-rdcDark font-black px-6 py-3 rounded-full hover:bg-yellow-400 transition">
+                        Explorer le Code d'Honneur des Sapeurs →
+                    </button>
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-rdcGold/40">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Sapologie Congolaise" class="w-full h-80 object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 p-4 text-center">
+                    <p class="text-xs text-rdcGold italic">"Le sapeur ne fait pas de guerre, il arme ses vêtements d'élégance."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION GASTRONOMIE -->
+    <section id="gastronomie" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-rdcGold">Gastronomie Traditionnelle</h2>
+            <p class="text-slate-400 mt-2">Les saveurs d'exception de la République Démocratique du Congo</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div onclick="openModal('modal-pondu')" class="bg-rdcCard p-6 rounded-2xl border border-slate-700 cursor-pointer hover:border-rdcGold transition">
+                <h3 class="text-xl font-bold text-rdcGold mb-2">🍲 Le Pondu (Saka-Saka)</h3>
+                <p class="text-sm text-slate-300">Feuilles de manioc pilées et mijotées avec de l'huile de palme et du poisson fumé...</p>
+            </div>
+            <div onclick="openModal('modal-liboke')" class="bg-rdcCard p-6 rounded-2xl border border-slate-700 cursor-pointer hover:border-rdcGold transition">
+                <h3 class="text-xl font-bold text-rdcGold mb-2">🐟 Le Liboké de Poisson</h3>
+                <p class="text-sm text-slate-300">Poisson Capitaine mariné aux piments et cuit à l'étouffée dans des feuilles de bananier...</p>
+            </div>
+            <div onclick="openModal('modal-fufu')" class="bg-rdcCard p-6 rounded-2xl border border-slate-700 cursor-pointer hover:border-rdcGold transition">
+                <h3 class="text-xl font-bold text-rdcGold mb-2">🍞 Le Fufu & Makayabu</h3>
+                <p class="text-sm text-slate-300">Boule de farine de manioc et maïs servie avec du poisson salé assaisonné...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ INTERACTIF DES LANGUES -->
+    <section id="quiz" class="max-w-3xl mx-auto px-6 py-20">
+        <div class="bg-rdcCard p-8 md:p-12 rounded-3xl border border-rdcGold/40 shadow-2xl text-center">
+            <span class="text-xs font-bold text-rdcRed uppercase tracking-widest">Testez vos connaissances</span>
+            <h2 class="text-3xl font-extrabold text-rdcGold mt-1 mb-6">Quiz des 4 Langues Nationales</h2>
+
+            <div id="quiz-box" class="space-y-6">
+                <p id="question" class="text-xl font-semibold text-white">Chargement de la question...</p>
+                <div id="options" class="grid gap-3"></div>
+            </div>
+
+            <div id="result" class="hidden my-6 p-6 bg-slate-900 rounded-2xl border border-rdcGold">
+                <h3 class="text-2xl font-bold text-rdcGold">Résultat du Quiz</h3>
+                <p id="score-text" class="text-xl text-white mt-2"></p>
+                <button onclick="resetQuiz()" class="mt-4 bg-rdcRed px-6 py-2.5 rounded-full font-bold text-sm">Recommencer le Quiz</button>
+            </div>
+
+            <button id="next-btn" onclick="nextQuestion()" class="hidden mt-6 bg-rdcGold text-rdcDark font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition">
+                Question Suivante →
+            </button>
+        </div>
+    </section>
+
+    <!-- MODALES / SEMI-PAGES DÉTAILLÉES -->
+    <div id="modal-rumba" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-rumba')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">L'Histoire de la Rumba Congolaise</h3>
+            <p class="text-slate-300 space-y-4 text-base leading-relaxed">
+                Née dans les années 1940-1950 sur les deux rives du fleuve Congo, la Rumba congolaise trouve ses racines profondes dans le rythme ancestral <strong>Kumba</strong>. Déporté aux Caraïbes puis réimporté sous forme de son cubain, ce rythme a été réapproprié par les musiciens kinois.<br><br>
+                En 2021, l'UNESCO a inscrit la Rumba Congolaise sur la liste représentative du patrimoine culturel immatériel de l'humanité, saluant sa poésie et son rôle de ciment national.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-sebene" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-sebene')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">Le Sébéne : L'Extase de la Guitare Solo</h3>
+            <p class="text-slate-300 text-base leading-relaxed">
+                Le <strong>Sébéne</strong> est la partie centrale et la plus dansante d'un morceau de Rumba ou de Soukous. Le chant ralentit pour laisser place au jeu virtuose du guitariste solo.<br><br>
+                Des maîtres comme <strong>Franco Luambo Makiadi</strong>, <strong>Doctor Nico Kasanda</strong>, ou plus tard <strong>Diblo Dibala</strong> ont élevé la guitare solo congolaise au rang d'art mondialement admiré.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-pionniers" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-pionniers')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">Les Grands Pionniers de la Musique</h3>
+            <ul class="space-y-3 text-slate-300 text-sm">
+                <li><strong class="text-rdcGold">Joseph Kabasele (Grand Kallé) :</strong> Créateur de l'orchestre <em>African Jazz</em> et de l'hymne <em>Indépendance Cha Cha</em> en 1960.</li>
+                <li><strong class="text-rdcGold">Franco Luambo Makiadi :</strong> Le "Grand Maître" du TP OK Jazz, moraliste, virtuose de la guitare et poète du peuple.</li>
+                <li><strong class="text-rdcGold">Tabu Ley Rochereau :</strong> Le premier musicien africain à s'être produit à l'Olympia de Paris en 1970.</li>
+                <li><strong class="text-rdcGold">Papa Wemba (Le Rossignol) :</strong> Co-fondateur de Zaïko Langa Langa et roi de la SAPE.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-sape" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-sape')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">Le Code d'Honneur de la Sapologie</h3>
+            <p class="text-slate-300 text-base leading-relaxed">
+                Née du désir d'émancipation et d'affirmation de soi, la Sapologie repose sur 10 commandements moraux :<br><br>
+                1. Ne pas céder à la violence ni à la vulgarité.<br>
+                2. Maîtriser l'harmonie des couleurs (3 couleurs maximum).<br>
+                3. Respecter les aînés et véhiculer la paix sociale.<br>
+                4. Soigner sa démarche et sa posture.
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-center py-8 text-slate-500 text-sm">
+        <p>© 2026 Culture RDC — Site conçu pour la valorisation du patrimoine de la RDC.</p>
+    </footer>
+
+    <!-- JAVASCRIPT DU QUIZ ET MODALES -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        const quizData = [
+            {
+                question: "Que signifie 'Mbote, osali malamu?' en Lingala ?",
+                options: ["Bonjour, comment vas-tu ?", "Merci beaucoup mon frère", "Au revoir et à demain", "Où se trouve le marché ?"],
+                answer: 0
+            },
+            {
+                question: "Quel orchestre mythique a interprété 'Indépendance Cha Cha' en 1960 ?",
+                options: ["TP OK Jazz", "Zaïko Langa Langa", "African Jazz", "Empire Bakuba"],
+                answer: 2
+            },
+            {
+                question: "En quelle année la Rumba Congolaise a-t-elle été inscrite à l'UNESCO ?",
+                options: ["2010", "2015", "2021", "2024"],
+                answer: 2
+            },
+            {
+                question: "Quelle est la règle d'or d'assemblage des couleurs chez les Sapeurs ?",
+                options: ["5 couleurs maximum", "Pas plus de 3 couleurs", "Une seule couleur unie", "Aucune règle de couleur"],
+                answer: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const q = quizData[currentQuestion];
+            document.getElementById('question').innerText = q.question;
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl font-medium transition';
+                btn.innerText = opt;
+                btn.onclick = () => selectOption(idx, btn);
+                optionsDiv.appendChild(btn);
+            });
+            document.getElementById('next-btn').classList.add('hidden');
+        }
+
+        function selectOption(index, btn) {
+            const q = quizData[currentQuestion];
+            const buttons = document.querySelectorAll('#options button');
+            
+            buttons.forEach((b, idx) => {
+                b.disabled = true;
+                if(idx === q.answer) {
+                    b.classList.add('bg-emerald-600', 'border-emerald-500', 'text-white');
+                } else if(idx === index) {
+                    b.classList.add('bg-rose-600', 'border-rose-500', 'text-white');
+                }
+            });
+
+            if(index === q.answer) score++;
+
+            if(currentQuestion < quizData.length - 1) {
+                document.getElementById('next-btn').classList.remove('hidden');
+            } else {
+                showResult();
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-box').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('score-text').innerText = `Vous avez obtenu ${score} sur ${quizData.length} points !`;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-box').classList.remove('hidden');
+            document.getElementById('result').classList.add('hidden');
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congo Culture - Patrimoine de la RDC</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rdcBlue: '#0077c8',
+                        rdcGold: '#ffce00',
+                        rdcRed: '#ce1126',
+                        rdcDark: '#0f172a',
+                        rdcCard: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-rdcDark text-slate-100 font-sans leading-relaxed selection:bg-rdcGold selection:text-rdcDark">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header border-b border-rdcGold/30 px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-extrabold tracking-wider text-rdcGold uppercase flex items-center gap-2">
+            <span class="text-3xl">🇨🇩</span> Culture<span class="text-rdcRed">RDC</span>
+        </a>
+        <nav class="hidden md:flex gap-6 font-semibold text-sm">
+            <a href="#hymne" class="hover:text-rdcGold transition">Hymne National</a>
+            <a href="#pionniers" class="hover:text-rdcGold transition">Pionniers & Rumba</a>
+            <a href="#sape" class="hover:text-rdcGold transition">La Sapologie</a>
+            <a href="#gastronomie" class="hover:text-rdcGold transition">Gastronomie</a>
+            <a href="#quiz" class="hover:text-rdcGold transition">Quiz Langues</a>
+        </nav>
+        <a href="#quiz" class="bg-rdcRed hover:bg-red-700 text-white text-sm font-bold px-4 py-2 rounded-full transition shadow-lg">
+            Jouer au Quiz
+        </a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6 bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1600&q=80');">
+        <div class="max-w-4xl text-center space-y-6">
+            <span class="inline-block bg-rdcGold/20 text-rdcGold border border-rdcGold/40 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                Patrimoine Immatériel UNESCO & Culture Vivante
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rdcGold via-white to-rdcBlue leading-tight">
+                L'Ame et la Grandeur de la Culture Congolaise
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+                Explorez l'histoire des grands royaumes, les virtuoses de la Rumba, l'art mythique de la Sapologie, et apprenez nos langues nationales.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="#hymne" class="bg-rdcGold hover:bg-yellow-400 text-rdcDark font-extrabold px-8 py-3.5 rounded-full transition shadow-xl transform hover:-translate-y-1">
+                    Écouter l'Hymne National 🎵
+                </a>
+                <a href="#pionniers" class="border-2 border-slate-400 hover:border-rdcGold px-8 py-3.5 rounded-full font-bold transition">
+                    Découvrir la Rumba & le Sébéne
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HYMNE NATIONAL -->
+    <section id="hymne" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="bg-rdcCard border-l-8 border-rdcBlue rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-8 border-b border-slate-700 pb-6">
+                <div>
+                    <span class="text-xs font-bold text-rdcBlue uppercase tracking-widest">Symbole de Souveraineté</span>
+                    <h2 class="text-3xl font-bold text-rdcGold mt-1">Debout Congolais !</h2>
+                    <p class="text-sm text-slate-400">Écrit en 1960 par Joseph Lutumba et composé par le Père Simon-Pierre Boka</p>
+                </div>
+                <!-- LECTEUR AUDIO POUR L'HYMNE -->
+                <div class="bg-slate-900 p-4 rounded-xl border border-rdcGold/40 w-full md:w-80 text-center shadow-inner">
+                    <p class="text-xs text-rdcGold font-bold mb-2 uppercase tracking-wide">
+                        <i class="fas fa-compact-disc fa-spin mr-2"></i>Instrumentale Officielle
+                    </p>
+                    <audio controls class="w-full">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/2/22/Debout_Congolais_instrumental.ogg" type="audio/ogg">
+                        Votre navigateur ne supporte pas le lecteur audio.
+                    </audio>
+                </div>
+            </div>
+
+            <!-- PAROLES DE L'HYMNE -->
+            <div class="space-y-6 text-slate-200 text-center md:text-left text-lg leading-relaxed">
+                <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
+                    <h3 class="text-rdcRed font-bold text-sm uppercase mb-2">Refrain</h3>
+                    <p class="italic font-semibold">
+                        Debout Congolais,<br>
+                        Unis par le sort, Unis dans l'effort pour le salut !<br>
+                        Aujourd'hui dressons nos fronts longtemps courbés<br>
+                        Et prenons plus bel élan, dans la paix,<br>
+                        Ô peuple ardent, par le travail, nous bâtirons un pays plus beau qu'avant, dans la paix !
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 text-base">
+                    <div class="bg-slate-900/30 p-5 rounded-xl">
+                        <h4 class="text-rdcGold font-bold text-sm mb-2">1er Couplet</h4>
+                        <p>
+                            Citoyens, entonnez l'hymne sacré de votre fierté,<br>
+                            Acrochez à jamais le drapeau de votre liberté.<br>
+                            Quarante ans d'indépendance, ô fleur de mémoire !<br>
+                            Béni soit le sol de nos aïeux,<br>
+                            Béni soit le ciel de nos destinées !
+                        </p>
+                    </div>
+                    <div class="bg-slate-900/30 p-5 rounded-xl">
+                        <h4 class="text-rdcGold font-bold text-sm mb-2">2ème Couplet</h4>
+                        <p>
+                            Bâtissons un pays plus beau qu'avant,<br>
+                            Dans la paix, la justice et le travail.<br>
+                            Peuple congolais, garde ta foi,<br>
+                            Que la justice et la paix régnent à jamais !
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION MUSIQUE, PIONNIERS ET SÉBÈNE -->
+    <section id="pionniers" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-rdcGold">La Rumba Congolaise & Ses Légendes</h2>
+            <p class="text-slate-400 mt-2">Cliquez sur une carte pour ouvrir la semi-page d'explications détaillées</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Carte Rumba -->
+            <div onclick="openModal('modal-rumba')" class="bg-rdcCard rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transform hover:-translate-y-2 transition duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Rumba" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-rdcBlue text-white text-xs font-bold px-3 py-1 rounded-full">UNESCO</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-rdcGold group-hover:text-white transition">L'Histoire de la Rumba</h3>
+                    <p class="text-slate-300 text-sm mt-2 line-clamp-3">De l'African Jazz de Kallé Jeef jusqu'à l'inauguration du style moderne kinois...</p>
+                    <span class="inline-block text-xs font-bold text-rdcGold mt-4">En savoir plus →</span>
+                </div>
+            </div>
+
+            <!-- Carte Le Sébéne -->
+            <div onclick="openModal('modal-sebene')" class="bg-rdcCard rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transform hover:-translate-y-2 transition duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Guitare Sebene" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-rdcRed text-white text-xs font-bold px-3 py-1 rounded-full">Rythme</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-rdcGold group-hover:text-white transition">Le Sébéne & La Guitare solo</h3>
+                    <p class="text-slate-300 text-sm mt-2 line-clamp-3">Découvrez la partie dansante, l'extase instrumentale et les solistes de légende comme Franco et Dr Nico...</p>
+                    <span class="inline-block text-xs font-bold text-rdcGold mt-4">En savoir plus →</span>
+                </div>
+            </div>
+
+            <!-- Carte Les Pionniers -->
+            <div onclick="openModal('modal-pionniers')" class="bg-rdcCard rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transform hover:-translate-y-2 transition duration-300 group">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80" alt="Pionniers" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 right-3 bg-rdcGold text-rdcDark text-xs font-bold px-3 py-1 rounded-full">Icones</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-rdcGold group-hover:text-white transition">Les Pères Fondateurs</h3>
+                    <p class="text-slate-300 text-sm mt-2 line-clamp-3">Grand Kallé, Franco Luambo, Tabu Ley Rochereau, Papa Wemba, Madilu System...</p>
+                    <span class="inline-block text-xs font-bold text-rdcGold mt-4">En savoir plus →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION LA SAPE (SAPOLOGIE) -->
+    <section id="sape" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="bg-gradient-to-r from-rdcCard via-slate-800 to-rdcCard rounded-3xl p-8 md:p-12 border border-rdcGold/30 shadow-2xl grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <span class="text-xs font-extrabold text-rdcGold uppercase tracking-widest">Élégance & Philosophie</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">La Sapologie Kinoise</h2>
+                <p class="text-slate-300 text-base leading-relaxed">
+                    La <strong>SAPE</strong> (Société des Ambianceurs et des Personnes Élégantes) dépasse la simple mode. C'est un mouvement sous-culturel pacifique, une véritable thérapie sociale par le style raffiné et le respect d'autrui.
+                </p>
+                <div class="pt-2">
+                    <button onclick="openModal('modal-sape')" class="bg-rdcGold text-rdcDark font-black px-6 py-3 rounded-full hover:bg-yellow-400 transition">
+                        Explorer le Code d'Honneur des Sapeurs →
+                    </button>
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-rdcGold/40">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Sapologie Congolaise" class="w-full h-80 object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 p-4 text-center">
+                    <p class="text-xs text-rdcGold italic">"Le sapeur ne fait pas de guerre, il arme ses vêtements d'élégance."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION GASTRONOMIE -->
+    <section id="gastronomie" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-rdcGold">Gastronomie Traditionnelle</h2>
+            <p class="text-slate-400 mt-2">Les saveurs d'exception de la République Démocratique du Congo</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div onclick="openModal('modal-pondu')" class="bg-rdcCard p-6 rounded-2xl border border-slate-700 cursor-pointer hover:border-rdcGold transition">
+                <h3 class="text-xl font-bold text-rdcGold mb-2">🍲 Le Pondu (Saka-Saka)</h3>
+                <p class="text-sm text-slate-300">Feuilles de manioc pilées et mijotées avec de l'huile de palme et du poisson fumé...</p>
+            </div>
+            <div onclick="openModal('modal-liboke')" class="bg-rdcCard p-6 rounded-2xl border border-slate-700 cursor-pointer hover:border-rdcGold transition">
+                <h3 class="text-xl font-bold text-rdcGold mb-2">🐟 Le Liboké de Poisson</h3>
+                <p class="text-sm text-slate-300">Poisson Capitaine mariné aux piments et cuit à l'étouffée dans des feuilles de bananier...</p>
+            </div>
+            <div onclick="openModal('modal-fufu')" class="bg-rdcCard p-6 rounded-2xl border border-slate-700 cursor-pointer hover:border-rdcGold transition">
+                <h3 class="text-xl font-bold text-rdcGold mb-2">🍞 Le Fufu & Makayabu</h3>
+                <p class="text-sm text-slate-300">Boule de farine de manioc et maïs servie avec du poisson salé assaisonné...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ INTERACTIF DES LANGUES -->
+    <section id="quiz" class="max-w-3xl mx-auto px-6 py-20">
+        <div class="bg-rdcCard p-8 md:p-12 rounded-3xl border border-rdcGold/40 shadow-2xl text-center">
+            <span class="text-xs font-bold text-rdcRed uppercase tracking-widest">Testez vos connaissances</span>
+            <h2 class="text-3xl font-extrabold text-rdcGold mt-1 mb-6">Quiz des 4 Langues Nationales</h2>
+
+            <div id="quiz-box" class="space-y-6">
+                <p id="question" class="text-xl font-semibold text-white">Chargement de la question...</p>
+                <div id="options" class="grid gap-3"></div>
+            </div>
+
+            <div id="result" class="hidden my-6 p-6 bg-slate-900 rounded-2xl border border-rdcGold">
+                <h3 class="text-2xl font-bold text-rdcGold">Résultat du Quiz</h3>
+                <p id="score-text" class="text-xl text-white mt-2"></p>
+                <button onclick="resetQuiz()" class="mt-4 bg-rdcRed px-6 py-2.5 rounded-full font-bold text-sm">Recommencer le Quiz</button>
+            </div>
+
+            <button id="next-btn" onclick="nextQuestion()" class="hidden mt-6 bg-rdcGold text-rdcDark font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition">
+                Question Suivante →
+            </button>
+        </div>
+    </section>
+
+    <!-- MODALES / SEMI-PAGES DÉTAILLÉES -->
+    <div id="modal-rumba" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-rumba')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">L'Histoire de la Rumba Congolaise</h3>
+            <p class="text-slate-300 space-y-4 text-base leading-relaxed">
+                Née dans les années 1940-1950 sur les deux rives du fleuve Congo, la Rumba congolaise trouve ses racines profondes dans le rythme ancestral <strong>Kumba</strong>. Déporté aux Caraïbes puis réimporté sous forme de son cubain, ce rythme a été réapproprié par les musiciens kinois.<br><br>
+                En 2021, l'UNESCO a inscrit la Rumba Congolaise sur la liste représentative du patrimoine culturel immatériel de l'humanité, saluant sa poésie et son rôle de ciment national.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-sebene" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-sebene')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">Le Sébéne : L'Extase de la Guitare Solo</h3>
+            <p class="text-slate-300 text-base leading-relaxed">
+                Le <strong>Sébéne</strong> est la partie centrale et la plus dansante d'un morceau de Rumba ou de Soukous. Le chant ralentit pour laisser place au jeu virtuose du guitariste solo.<br><br>
+                Des maîtres comme <strong>Franco Luambo Makiadi</strong>, <strong>Doctor Nico Kasanda</strong>, ou plus tard <strong>Diblo Dibala</strong> ont élevé la guitare solo congolaise au rang d'art mondialement admiré.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-pionniers" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-pionniers')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">Les Grands Pionniers de la Musique</h3>
+            <ul class="space-y-3 text-slate-300 text-sm">
+                <li><strong class="text-rdcGold">Joseph Kabasele (Grand Kallé) :</strong> Créateur de l'orchestre <em>African Jazz</em> et de l'hymne <em>Indépendance Cha Cha</em> en 1960.</li>
+                <li><strong class="text-rdcGold">Franco Luambo Makiadi :</strong> Le "Grand Maître" du TP OK Jazz, moraliste, virtuose de la guitare et poète du peuple.</li>
+                <li><strong class="text-rdcGold">Tabu Ley Rochereau :</strong> Le premier musicien africain à s'être produit à l'Olympia de Paris en 1970.</li>
+                <li><strong class="text-rdcGold">Papa Wemba (Le Rossignol) :</strong> Co-fondateur de Zaïko Langa Langa et roi de la SAPE.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-sape" class="modal opacity-0 invisible fixed inset-0 z-50 bg-slate-950/80 backdrop-filter backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-rdcCard max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 rounded-2xl border border-rdcGold shadow-2xl relative">
+            <button onclick="closeModal('modal-sape')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">✕</button>
+            <h3 class="text-2xl font-bold text-rdcGold mb-4">Le Code d'Honneur de la Sapologie</h3>
+            <p class="text-slate-300 text-base leading-relaxed">
+                Née du désir d'émancipation et d'affirmation de soi, la Sapologie repose sur 10 commandements moraux :<br><br>
+                1. Ne pas céder à la violence ni à la vulgarité.<br>
+                2. Maîtriser l'harmonie des couleurs (3 couleurs maximum).<br>
+                3. Respecter les aînés et véhiculer la paix sociale.<br>
+                4. Soigner sa démarche et sa posture.
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-center py-8 text-slate-500 text-sm">
+        <p>© 2026 Culture RDC — Site conçu pour la valorisation du patrimoine de la RDC.</p>
+    </footer>
+
+    <!-- JAVASCRIPT DU QUIZ ET MODALES -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        const quizData = [
+            {
+                question: "Que signifie 'Mbote, osali malamu?' en Lingala ?",
+                options: ["Bonjour, comment vas-tu ?", "Merci beaucoup mon frère", "Au revoir et à demain", "Où se trouve le marché ?"],
+                answer: 0
+            },
+            {
+                question: "Quel orchestre mythique a interprété 'Indépendance Cha Cha' en 1960 ?",
+                options: ["TP OK Jazz", "Zaïko Langa Langa", "African Jazz", "Empire Bakuba"],
+                answer: 2
+            },
+            {
+                question: "En quelle année la Rumba Congolaise a-t-elle été inscrite à l'UNESCO ?",
+                options: ["2010", "2015", "2021", "2024"],
+                answer: 2
+            },
+            {
+                question: "Quelle est la règle d'or d'assemblage des couleurs chez les Sapeurs ?",
+                options: ["5 couleurs maximum", "Pas plus de 3 couleurs", "Une seule couleur unie", "Aucune règle de couleur"],
+                answer: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const q = quizData[currentQuestion];
+            document.getElementById('question').innerText = q.question;
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl font-medium transition';
+                btn.innerText = opt;
+                btn.onclick = () => selectOption(idx, btn);
+                optionsDiv.appendChild(btn);
+            });
+            document.getElementById('next-btn').classList.add('hidden');
+        }
+
+        function selectOption(index, btn) {
+            const q = quizData[currentQuestion];
+            const buttons = document.querySelectorAll('#options button');
+            
+            buttons.forEach((b, idx) => {
+                b.disabled = true;
+                if(idx === q.answer) {
+                    b.classList.add('bg-emerald-600', 'border-emerald-500', 'text-white');
+                } else if(idx === index) {
+                    b.classList.add('bg-rose-600', 'border-rose-500', 'text-white');
+                }
+            });
+
+            if(index === q.answer) score++;
+
+            if(currentQuestion < quizData.length - 1) {
+                document.getElementById('next-btn').classList.remove('hidden');
+            } else {
+                showResult();
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-box').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('score-text').innerText = `Vous avez obtenu ${score} sur ${quizData.length} points !`;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-box').classList.remove('hidden');
+            document.getElementById('result').classList.add('hidden');
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
